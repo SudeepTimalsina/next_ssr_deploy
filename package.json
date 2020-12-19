@@ -2,16 +2,20 @@
   "name": "hello_next",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "function.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "yarn build && cross-env NODE_ENV=production firebase deploy --only functions,hosting"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "firebase-admin": "^9.4.1",
+    "firebase-functions": "^3.12.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.4.2",
     "react": "^16.13.1",
